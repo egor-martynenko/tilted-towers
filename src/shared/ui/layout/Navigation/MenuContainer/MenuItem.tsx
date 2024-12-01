@@ -1,4 +1,3 @@
-'use client';
 import cn from 'classnames';
 import Link from 'next/link';
 import { FC } from 'react';

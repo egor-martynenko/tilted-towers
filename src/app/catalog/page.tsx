@@ -1,7 +1,20 @@
-export default function AdminPage() {
-  return (
-    <div className="pt-24 mx-auto max-w-8xl px-6 py-20 lg:px-8 text-white">
-      <h2 className="text-4xl font-bold leading-tight">CATALOG</h2>
+'use client';
+import { useAllAccounts } from '@/shared/api/useAllAccounts';
+import { useEffect } from 'react';
+import Heading from '@/shared/ui/Heading';
+
+export default function CatalogPage() {
+  const { data, isLoading } = useAllAccounts();
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
+  return isLoading ? (
+    <div>Loading...</div>
+  ) : (
+    <div className="mx-auto max-w-8xl py-5">
+      <Heading title={'CATALOG'} />
     </div>
   );
 }

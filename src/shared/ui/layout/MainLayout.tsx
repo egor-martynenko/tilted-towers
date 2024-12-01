@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import Sidebar from './Sidebar/Sidebar';
 import Navigation from './Navigation/Navigation';

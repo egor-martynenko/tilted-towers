@@ -9,14 +9,24 @@ export const firstMenu: IMenu = {
       title: 'Home',
     },
     {
-      icon: 'MdRefresh',
-      link: '/fresh',
-      title: 'Fresh accounts',
+      icon: 'MdArchive',
+      link: '/catalog',
+      title: 'Catalog',
     },
     {
       icon: 'MdLocalFireDepartment',
-      link: '/trending',
-      title: 'Trending now',
+      link: '/hotOffer',
+      title: 'Hot Offer',
+    },
+    {
+      icon: 'MdListAlt',
+      link: '/terms',
+      title: 'General Terms',
+    },
+    {
+      icon: 'MdBook',
+      link: '/policy',
+      title: 'Policy',
     },
   ],
 };

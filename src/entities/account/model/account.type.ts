@@ -1,19 +1,25 @@
-type TDetails = {
-  Skins: number;
-  Vbucks: number;
-  Emotes: number;
-  AccountLevel: number;
-  Backblings: number;
-  Pickaxes: number;
-  Gliders: number;
-  Loadings: number;
+export type TAccountImage = {
+  url: string;
+  name: string;
+  _id: string;
 };
 
-type TAccount = {
-  id: string;
-  title: string;
-  images: string[];
+export type TAccount = {
+  _id: string;
+  name: string;
+  slug: string;
+  images: TAccountImage[];
   tags: string[];
-  details: TDetails;
   price: number;
+  parameters: {
+    outfits: number;
+    level: number;
+    emotes: number;
+    gliders: number;
+    vbucks: number;
+    pickaxes: number;
+    backbling: number;
+    loadings: number;
+    _id: string;
+  };
 };

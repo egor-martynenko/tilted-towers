@@ -1,21 +1,11 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 import './globals.css';
-import { MainLayout } from '@/shared/ui/layout/Layout';
-
-const geistSans = localFont({
-  src: '../../public/fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-});
-const geistMono = localFont({
-  src: '../../public/fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
-});
+import { MainLayout } from '@/shared/ui/layout/MainLayout';
+import MainProvider from '@/providers/MainProvider';
+import { titleMerge } from '@/shared/config/seo.config';
 
 export const metadata: Metadata = {
-  title: 'Tilted Towers',
+  title: titleMerge('Home'),
   description: '',
 };
 
@@ -26,8 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <MainLayout>{children}</MainLayout>
+      <body>
+        <MainProvider>
+          <MainLayout>{children}</MainLayout>
+        </MainProvider>
       </body>
     </html>
   );
