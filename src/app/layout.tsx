@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import '@/shared/styles/globals.css';
 import { MainLayout } from '@/shared/ui/layout/MainLayout';
 import MainProvider from '@/providers/MainProvider';
 import { titleMerge } from '@/shared/config/seo.config';

@@ -3,11 +3,11 @@ import type { Metadata } from 'next';
 import { titleMerge } from '@/shared/config/seo.config';
 
 export const metadata: Metadata = {
-  title: titleMerge('Hot Offer'),
-  description: 'TiltedTowers Catalog',
+  title: titleMerge('Auth'),
+  description: 'TiltedTowers Shop',
 };
 
-export default function HotOfferLayout({
+export default function AuthLayout({
   children,
 }: Readonly<{
   children: ReactNode;

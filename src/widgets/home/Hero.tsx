@@ -1,5 +1,5 @@
 'use client';
-import { Button } from '@/shared/ui/button/Button';
+import { Button } from '@/shared/ui/form-elements/Button';
 import { useLanguageStore } from '@/shared/store/languageStore';
 
 const Hero = () => {

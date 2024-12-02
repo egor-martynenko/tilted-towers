@@ -1,6 +1,9 @@
 'use client';
 import { FC, ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { Provider } from 'react-redux';
+import { store } from '@/store/store';
+import HeadProvider from '@/providers/HeadProvider/HeadProvider';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -11,7 +14,13 @@ const queryClient = new QueryClient({
 });
 const MainProvider = ({ children }: { children: ReactNode }) => {
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <HeadProvider>
+      <Provider store={store}>
+        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      </Provider>
+
+    </HeadProvider>
+
   );
 };
 
