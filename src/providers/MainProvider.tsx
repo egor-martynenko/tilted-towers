@@ -1,5 +1,5 @@
 'use client';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import { store } from '@/store/store';
@@ -12,13 +12,14 @@ const queryClient = new QueryClient({
     },
   },
 });
-const MainProvider = ({ children }: { children: ReactNode }) => {
+const MainProvider = ({ children } : {children : ReactNode}) => {
   return (
     <HeadProvider>
       <Provider store={store}>
-        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+        <QueryClientProvider client={queryClient}>
+            {children}
+        </QueryClientProvider>
       </Provider>
-
     </HeadProvider>
 
   );

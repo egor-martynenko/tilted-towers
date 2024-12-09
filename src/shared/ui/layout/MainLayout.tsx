@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
-import Sidebar from './Sidebar/Sidebar';
-import Navigation from './Navigation/Navigation';
+import Sidebar from '@/widgets/Sidebar/Sidebar';
+import Navigation from '@/widgets/Navigation/Navigation';
 
 import styles from './Layout.module.scss';
 

@@ -1,10 +1,10 @@
-// import { AddNewAccountForm } from '@/features/account/add-new-account/AddNewAccountForm';
 
-export default function AdminPage() {
+const AdminPage = () => {
   return (
     <div>
       AddNewAccountForm
-      {/*<AddNewAccountForm />*/}
     </div>
   );
 }
+
+export default AdminPage

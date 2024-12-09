@@ -2,19 +2,18 @@
 import { useAllAccounts } from '@/shared/api/useAllAccounts';
 import { useEffect } from 'react';
 import Heading from '@/shared/ui/Heading';
+import { AccountsGallery } from '@/shared/ui/accountsGallery/AccountsGallery';
 
 export default function CatalogPage() {
   const { data, isLoading } = useAllAccounts();
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   return isLoading ? (
     <div>Loading...</div>
   ) : (
-    <div className="mx-auto max-w-8xl py-5">
+    <div className="">
       <Heading title={'CATALOG'} />
+      <AccountsGallery accounts={data?.data || []} />
     </div>
   );
 }

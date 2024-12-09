@@ -12,7 +12,7 @@ interface ISearchField {
 const SearchField: FC<ISearchField> = ({ handleSearch, searchTerm }) => {
 	return (
 		<div className={styles.search}>
-			<MaterialIcon name="MdSearch" />
+			{/*<MaterialIcon name="MdSearch" />*/}
 			<input placeholder="Search" value={searchTerm} onChange={handleSearch} />
 		</div>
 	)

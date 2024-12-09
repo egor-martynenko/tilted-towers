@@ -1,4 +1,4 @@
-import { IUser } from '@/shared/types/user.types';
+import { IUser } from '@/entities/user/model/user.types';
 
 export interface IUserState {
   email: string;
@@ -13,6 +13,7 @@ export interface IToken {
 export interface IInitialState {
   user: IUserState | null;
   isLoading: boolean;
+  error: string | null;
 }
 
 export interface IEmailPassword {

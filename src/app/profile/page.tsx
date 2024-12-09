@@ -1,7 +1,11 @@
-export default function ProfilePage() {
+import Heading from '@/shared/ui/Heading';
+
+const ProfilePage = () => {
   return (
-    <div className="mx-auto max-w-8xltext-white">
-      <h2 className="text-4xl font-bold leading-tight">Profile</h2>
+    <div className="">
+      <Heading title={'Profile'} />
     </div>
   );
 }
+export default ProfilePage;
+

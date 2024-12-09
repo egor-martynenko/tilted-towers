@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import Logo from '../../components/Logo';
+import Logo from '../../shared/ui/components/Logo';
 
 import styles from './Navigation.module.scss';
-import { MenuContainer } from '@/shared/ui/layout/Navigation/MenuContainer/MenuContainer';
+import { MenuContainer } from '@/widgets/Navigation/MenuContainer/MenuContainer';
 
 const Navigation: FC = () => {
   return (

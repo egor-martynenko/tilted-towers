@@ -1,0 +1,27 @@
+.menu {
+  @apply mb-14 ;
+
+  .heading {
+    @apply text-white uppercase text-lg font-semibold pl-10 pb-5;
+  }
+
+  .ul {
+    @apply pb-10 flex flex-col gap-5;
+    > li {
+      @apply px-8 border-r-4 border-r-transparent transition-colors flex items-center;
+      > a {
+        @apply flex items-center text-gray-600 px-3 cursor-pointer;
+        > span {
+          @apply ml-3 text-lg hover:text-white;
+        }
+      }
+
+      &.active {
+        @apply border-r-[#FEFF04];
+        > a > span {
+          @apply text-white;
+        }
+      }
+    }
+  }
+}

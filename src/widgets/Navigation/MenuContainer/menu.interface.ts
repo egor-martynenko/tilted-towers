@@ -1,7 +1,7 @@
-import { TMaterialIconName } from '@/shared/types/icon.types';
+import { ReactNode } from 'react';
 
 export interface IMenuItem {
-  icon: TMaterialIconName;
+  icon ?: ReactNode;
   title: string;
   link: string;
 }

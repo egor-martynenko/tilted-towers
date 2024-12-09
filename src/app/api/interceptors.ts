@@ -1,5 +1,4 @@
 import axios from 'axios';
-import Cookies from 'js-cookie';
 import { API_URL } from '@/shared/config/api.config';
 import { errorCatch, getContentType } from '@/app/api/api.helpers';
 import { AuthService } from '@/shared/services/auth/auth.service';
@@ -16,7 +15,7 @@ export const instance = axios.create({
 });
 
 instance.interceptors.request.use((config) => {
-  const accessToken = Cookies.get('accessToken')
+  const accessToken = localStorage.getItem('accessToken')
   if(config.headers && accessToken){
     config.headers.Authorization = `Bearer ${accessToken}`
   }
