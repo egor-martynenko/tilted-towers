@@ -1,11 +1,13 @@
-import Hero from '@/widgets/home/Hero';
-import NewAccounts from '@/widgets/home/NewAccounts';
+import { FirstBanner } from '@/widgets/FirstBanner/FirstBanner';
+import { NewAccounts } from '@/widgets/NewAccounts/NewAccounts';
+
 
 export default function Home() {
+
   return (
     <main>
-      {/*<Hero />*/}
-      {/*<NewAccounts />*/}
+      <FirstBanner/>
+      <NewAccounts/>
     </main>
   );
 }

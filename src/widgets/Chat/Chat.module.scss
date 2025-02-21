@@ -1,0 +1,48 @@
+.messageGroup{
+  @apply flex gap-5
+}
+.messageInput{
+  @apply w-full rounded-2xl h-14
+}
+.messageBtn{
+  @apply bg-[#B687F5] px-4 py-0 border border-white text-lg rounded-2xl ;
+}
+
+.createChat{
+  @apply flex gap-5 items-center justify-center flex-col mt-20
+}
+.createChatCTA{
+  @apply text-white text-4xl
+}
+.createChatCTA_btn{
+  @apply text-white text-2xl border border-white py-2 px-5 rounded-2xl
+}
+.chatId{
+  @apply text-white mx-auto text-center
+}
+
+.message{
+  @apply text-white
+}
+
+.senderMessage{
+  @apply text-right
+}
+.receiverMessage{
+}
+
+.chatWrapper{
+
+}
+.messagesList{
+  overflow-y: scroll;
+  max-height: 100vh;
+  margin-bottom: 40px;
+}
+.messageGroup{
+  position: fixed;
+  bottom: 0;
+ left: 20vw;
+  right: 20vw;
+  background: #0C0B0B;
+}

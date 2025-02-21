@@ -1,0 +1,8 @@
+.wrapper{
+  @apply flex items-center justify-center w-full;
+}
+.tabs_list{
+  @apply flex gap-10}
+.tabs_listItem{
+  @apply text-white cursor-pointer;
+}

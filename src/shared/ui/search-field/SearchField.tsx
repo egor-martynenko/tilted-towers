@@ -1,7 +1,4 @@
 import { ChangeEvent, FC } from 'react'
-
-import { MaterialIcon } from '../icons/MaterialIcon'
-
 import styles from './SearchField.module.scss'
 
 interface ISearchField {
@@ -12,7 +9,6 @@ interface ISearchField {
 const SearchField: FC<ISearchField> = ({ handleSearch, searchTerm }) => {
 	return (
 		<div className={styles.search}>
-			{/*<MaterialIcon name="MdSearch" />*/}
 			<input placeholder="Search" value={searchTerm} onChange={handleSearch} />
 		</div>
 	)

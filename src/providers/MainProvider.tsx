@@ -1,27 +1,14 @@
 'use client';
 import { ReactNode } from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
-import { store } from '@/store/store';
 import HeadProvider from '@/providers/HeadProvider/HeadProvider';
+import { rootStore } from '@/app/store';
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-    },
-  },
-});
-const MainProvider = ({ children } : {children : ReactNode}) => {
+const MainProvider = ({ children }: { children: ReactNode }) => {
   return (
     <HeadProvider>
-      <Provider store={store}>
-        <QueryClientProvider client={queryClient}>
-            {children}
-        </QueryClientProvider>
-      </Provider>
+      <Provider store={rootStore}>{children}</Provider>
     </HeadProvider>
-
   );
 };
 

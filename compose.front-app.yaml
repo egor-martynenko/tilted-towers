@@ -1,0 +1,19 @@
+version: '1'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: frontend-app:${VERSION_TAG}
+    container_name: frontend-app
+    ports:
+      - '8080:80'
+    environment:
+      - API_URL={API_URL}
+    networks:
+      - app_network
+    restart: always
+
+networks:
+  app_network:
+    external: true

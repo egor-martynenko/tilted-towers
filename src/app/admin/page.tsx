@@ -1,10 +1,11 @@
+import { AdminTabs } from '@/widgets/AdminTabs/AdminTabs';
 
 const AdminPage = () => {
   return (
     <div>
-      AddNewAccountForm
+      <AdminTabs />
     </div>
   );
-}
+};
 
-export default AdminPage
+export default AdminPage;

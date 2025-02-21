@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 import cn from 'classnames'
 import { IField } from '@/shared/ui/form-elements/form.interface';
 
-export const Field = forwardRef<HTMLInputElement, IField>(({name ,error, type = 'text', style, ...rest}, ref) => {
+export const Field = forwardRef<HTMLInputElement, IField>(({name ,error, type, style, ...rest}, ref) => {
   return (
     <div
       className={cn('relative z-0 w-full mb-5 group', styles.common, styles.field)}

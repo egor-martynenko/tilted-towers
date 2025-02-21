@@ -2,18 +2,18 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
-import { useAuth } from '@/shared/hooks/useAuth';
+import { useSelector } from 'react-redux';
+import { selectUser } from '@/entities/user/model/userSlice';
 
 export const useAuthRedirect = () => {
-	const { user } = useAuth();
-	const router = useRouter();
-	const searchParams = useSearchParams();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const user = useSelector(selectUser);
+  const redirect = searchParams.get('redirect') || '/';
 
-	const redirect = searchParams.get('redirect') || '/';
-
-	useEffect(() => {
-		if (user) {
-			router.push(redirect);
-		}
-	}, [user, redirect, router]);
+  useEffect(() => {
+    if (user) {
+      router.push(redirect);
+    }
+  }, [user, redirect, router]);
 };
