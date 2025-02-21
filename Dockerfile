@@ -1,6 +1,6 @@
 # Сборка фронтенда
-FROM node:20-alpine AS build
-WORKDIR /app
+FROM node:22-alpine AS build
+WORKDIR /app_front
 COPY package*.json ./
 RUN npm install
 COPY . .
