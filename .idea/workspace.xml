@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="37e6c05b-d01a-49a9-a5b9-1b7fb1e5a174" name="Changes" comment="add docker file" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;egor-martynenko&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:egor-martynenko/tilted-towers.git&quot;,
+    &quot;accountId&quot;: &quot;d3f010ae-7224-40f6-a1c0-0f3d4b80c810&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2nqOZm0914lVEKApA0ypgQiWDEF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/egormartynenko/WebstormProjects/tilted-towers&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/egormartynenko/WebstormProjects/tilted-towers/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/app" />
+      <recent name="$PROJECT_DIR$/src/widgets" />
+      <recent name="$PROJECT_DIR$/src/shared/ui/icons" />
+      <recent name="$PROJECT_DIR$/src/shared/hooks" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app" />
+      <recent name="$PROJECT_DIR$/src/shared/ui/layout" />
+      <recent name="$PROJECT_DIR$/src/features/account/get-all-accounts" />
+      <recent name="$PROJECT_DIR$/src/entities/chat/model" />
+      <recent name="$PROJECT_DIR$/public/img" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.22855.79" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="37e6c05b-d01a-49a9-a5b9-1b7fb1e5a174" name="Changes" comment="" />
+      <created>1729697197139</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729697197139</updated>
+      <workItem from="1729697198304" duration="2355000" />
+      <workItem from="1729760031602" duration="2903000" />
+      <workItem from="1729779563197" duration="9016000" />
+      <workItem from="1729856172475" duration="8902000" />
+      <workItem from="1729932227965" duration="3494000" />
+      <workItem from="1729942689587" duration="775000" />
+      <workItem from="1729945433923" duration="4150000" />
+      <workItem from="1730110234164" duration="8229000" />
+      <workItem from="1730211431975" duration="8184000" />
+      <workItem from="1731899715490" duration="2777000" />
+      <workItem from="1731902502201" duration="21741000" />
+      <workItem from="1732018417083" duration="1541000" />
+      <workItem from="1732021772366" duration="108000" />
+      <workItem from="1732159796958" duration="21000" />
+      <workItem from="1732620669555" duration="5477000" />
+      <workItem from="1732769421233" duration="39660000" />
+      <workItem from="1733022597580" duration="48926000" />
+      <workItem from="1733220711707" duration="79000" />
+      <workItem from="1733390861412" duration="13725000" />
+      <workItem from="1733452383920" duration="7252000" />
+      <workItem from="1733542834361" duration="5446000" />
+      <workItem from="1733586411752" duration="11599000" />
+      <workItem from="1733722298334" duration="13510000" />
+      <workItem from="1733912042339" duration="13051000" />
+      <workItem from="1735747178808" duration="29000" />
+      <workItem from="1736436073484" duration="2476000" />
+      <workItem from="1737383785853" duration="28902000" />
+      <workItem from="1737630728024" duration="57270000" />
+      <workItem from="1740148239307" duration="1593000" />
+      <workItem from="1740150307241" duration="2278000" />
+      <workItem from="1740156552525" duration="2975000" />
+    </task>
+    <task id="LOCAL-00001" summary="Create layout and navigation">
+      <option name="closed" value="true" />
+      <created>1732796094421</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732796094421</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Create search">
+      <option name="closed" value="true" />
+      <created>1733026484686</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733026484687</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Complete first step of auth">
+      <option name="closed" value="true" />
+      <created>1733133633402</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733133633403</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add interceptors">
+      <option name="closed" value="true" />
+      <created>1733135535805</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733135535806</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactoring menu">
+      <option name="closed" value="true" />
+      <created>1733734195779</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733734195779</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add docker file">
+      <option name="closed" value="true" />
+      <created>1740149879032</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1740149879032</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add docker file">
+      <option name="closed" value="true" />
+      <created>1740150780094</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1740150780094</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add docker file">
+      <option name="closed" value="true" />
+      <created>1740304279294</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1740304279294</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add docker file">
+      <option name="closed" value="true" />
+      <created>1740304579468</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1740304579468</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="Create layout and navigation" />
+    <MESSAGE value="Create search" />
+    <MESSAGE value="Complete first step of auth" />
+    <MESSAGE value="Add interceptors" />
+    <MESSAGE value="refactoring menu" />
+    <MESSAGE value="add docker file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add docker file" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/profile/layout.tsx</url>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
