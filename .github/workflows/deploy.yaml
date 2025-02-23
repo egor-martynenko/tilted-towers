@@ -22,7 +22,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
 
-
       # Добавление сервера в known_hosts для предотвращения ошибок при SSH-соединении
       - name: Add server to known hosts
         continue-on-error: true
