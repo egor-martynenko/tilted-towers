@@ -1,0 +1,109 @@
+name: CI/CD Pipeline for Frontend
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_type:
+        description: 'Choose the type of deployment'
+        required: true
+        default: 'frontend'
+        type: choice
+        options:
+          - frontend
+
+jobs:
+  deploy_frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+
+      # Добавление сервера в known_hosts для предотвращения ошибок при SSH-соединении
+      - name: Add server to known hosts
+        continue-on-error: true
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p 22 -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts || echo "Server not found, skipping."
+
+      # Проверка успешности соединения с сервером по SSH
+      - name: Test SSH Connection
+        run: |
+          ssh -i ~/.ssh/id_rsa -p 22 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "echo 'SSH connection successful!'"
+
+      # Клонирование репозитория из GitHub
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      # Увеличение версии приложения
+      - name: Bump Version
+        id: version
+        run: |
+          if [ ! -f version.txt ]; then echo "0.1.0" > version.txt; fi
+          VERSION=$(cat version.txt)
+          NEW_VERSION=$(echo $VERSION | awk -F. -v OFS=. '{$NF++; print}')
+          echo "$NEW_VERSION" > version.txt
+          echo "VERSION_TAG=$NEW_VERSION" >> $GITHUB_OUTPUT
+
+      # Коммит и пуш обновленной версии в репозиторий
+      - name: Commit Updated Version
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions"
+          git add version.txt
+          git commit -m "Bump version to ${{ steps.version.outputs.VERSION_TAG }}"
+          git push
+
+      # Удаление старых контейнеров и файлов на сервере
+      - name: Remove old containers and files
+        run: |
+          ssh -p 22 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "\
+          docker stop frontend-app || true && docker rm frontend-app || true && \
+          rm -rf /home/${{ secrets.SERVER_USER }}/frontend-app-*.tar.gz"
+
+      # Сборка образа Docker приложения с тегом версии
+      - name: Build Docker Image for Frontend
+        run: |
+          docker build -f Dockerfile -t frontend-app:${{ steps.version.outputs.VERSION_TAG }} .
+
+      # Сохранение и загрузка образа Docker на сервер
+      - name: Save and Upload Docker Image for Frontend
+        run: |
+          docker save frontend-app:${{ steps.version.outputs.VERSION_TAG }} > frontend-app-${{ steps.version.outputs.VERSION_TAG }}.tar
+          scp -P 22 frontend-app-${{ steps.version.outputs.VERSION_TAG }}.tar ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/home/${{ secrets.SERVER_USER }}/frontend/
+
+      # Загрузка образа Docker на сервер
+      - name: Load Docker Image for Frontend on Server
+        run: |
+          ssh -p 22 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "docker load < /home/${{ secrets.SERVER_USER }}/frontend/frontend-app-${{ steps.version.outputs.VERSION_TAG }}.tar"
+
+      # Проверка загруженного файла на сервере
+      - name: Verify uploaded file
+        run: |
+          ssh -p 22 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "ls -lh /home/${{ secrets.SERVER_USER }}/frontend/frontend-app-${{ steps.version.outputs.VERSION_TAG }}.tar"
+
+      # Копирование файла Docker Compose на сервер
+      - name: Copy Docker Compose File for Frontend to Server
+        run: |
+          scp -P 22 compose.front-app.yaml ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/home/${{ secrets.SERVER_USER }}/frontend/compose.yaml
+
+      # Запуск развертывания приложения на сервере с использованием Docker Compose
+      - name: Deploy Frontend Application
+        run: |
+          ssh -p 22 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "VERSION_TAG=${{ steps.version.outputs.VERSION_TAG }} docker compose -f /home/${{ secrets.SERVER_USER }}/frontend/compose.yaml up -d --force-recreate"
+
+      # Удаление старых образов Docker на сервере
+      - name: Clean up old images
+        run: |
+          ssh -p 22 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "docker images frontend-app | tail -n +2 | grep -v ${{ steps.version.outputs.VERSION_TAG }} | awk '{print \$3}' | xargs -r docker rmi"
+
+      # Отправка уведомления о успешном завершении развертывания
+      - name: Send Successful Deployment Notification
+        if: steps.container_status.outcome == 'success'
+        run: |
+          MESSAGE="✅ Деплой приложения успешно завершен! Новая версия: ${{ steps.version.outputs.VERSION_TAG }}!"
