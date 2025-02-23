@@ -7,7 +7,7 @@ services:
     image: frontend-app:${VERSION_TAG}
     container_name: frontend-app
     ports:
-      - '8080:80'
+      - '8081:80'
     environment:
       - API_URL={API_URL}
     networks:
