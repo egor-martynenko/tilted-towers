@@ -90,23 +90,17 @@ jobs:
       # Копирование файла Docker Compose на сервер
       - name: Copy Docker Compose File for Frontend to Server
         run: |
-          scp -P 22 compose.front.yaml ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/home/${{ secrets.SERVER_USER }}/frontend/compose.front.yaml
+          scp -P 22 compose.front-app.yaml ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/home/${{ secrets.SERVER_USER }}/frontend/compose.yaml
 
       # Запуск развертывания приложения на сервере с использованием Docker Compose
       - name: Deploy Frontend Application
         run: |
-          ssh -p 22 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "VERSION_TAG=${{ steps.version.outputs.VERSION_TAG }} docker compose -f /home/${{ secrets.SERVER_USER }}/frontend/compose.front.yaml up -d --force-recreate"
+          ssh -p 22 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "VERSION_TAG=${{ steps.version.outputs.VERSION_TAG }} docker compose -f /home/${{ secrets.SERVER_USER }}/frontend/compose.yaml up -d --force-recreate"
 
       # Удаление старых образов Docker на сервере
       - name: Clean up old images
         run: |
           ssh -p 22 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "docker images frontend-app | tail -n +2 | grep -v ${{ steps.version.outputs.VERSION_TAG }} | awk '{print \$3}' | xargs -r docker rmi"
-
-      # Задержка выполнения на 60 секунд
-      - name: Sleep for 60 seconds
-        if: always()
-        run: sleep 60s
-        shell: bash
 
       # Отправка уведомления о успешном завершении развертывания
       - name: Send Successful Deployment Notification
